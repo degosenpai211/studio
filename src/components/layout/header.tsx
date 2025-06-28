@@ -1,7 +1,8 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowLeft, User, Map } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 type HeaderProps = {
@@ -13,17 +14,34 @@ export function Header({ title, showBackButton = false }: HeaderProps) {
   const router = useRouter();
 
   return (
-    <header className="sticky top-0 z-10 flex h-16 items-center border-b bg-background px-4 shrink-0">
-      <div className="w-10">
-      {showBackButton && (
-        <Button variant="ghost" size="icon" onClick={() => router.back()} className="h-9 w-9">
-          <ArrowLeft className="h-5 w-5" />
-          <span className="sr-only">Back</span>
-        </Button>
-      )}
+    <header 
+      className="sticky top-0 z-10 grid h-16 grid-cols-[1fr_auto_1fr] items-center border-b bg-background px-4 shrink-0"
+    >
+      <div className="flex items-center justify-start">
+        {showBackButton && (
+          <Button variant="ghost" size="icon" onClick={() => router.back()} className="h-9 w-9">
+            <ArrowLeft className="h-5 w-5" />
+            <span className="sr-only">Back</span>
+          </Button>
+        )}
       </div>
-      <h1 className="flex-1 text-lg font-bold font-headline text-center">{title}</h1>
-      <div className="w-10"></div>
+      
+      <h1 className="text-lg font-bold font-headline text-center">
+        {title}
+      </h1>
+      
+      <div className="flex items-center justify-end gap-1">
+        <Button variant="ghost" size="icon" className="h-9 w-9">
+          <User className="h-5 w-5" />
+          <span className="sr-only">Profile</span>
+        </Button>
+        <Button asChild variant="ghost" size="icon" className="h-9 w-9">
+          <Link href="/map">
+            <Map className="h-5 w-5" />
+            <span className="sr-only">Map</span>
+          </Link>
+        </Button>
+      </div>
     </header>
   );
 }
