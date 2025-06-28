@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Stethoscope, Bot, Siren, MapPin } from 'lucide-react';
+import { Home, Stethoscope, Bot, MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
@@ -10,7 +10,6 @@ const navItems = [
   { href: '/symptom-triage', label: 'Triage', icon: Stethoscope },
   { href: '/ai-assistant', label: 'Assistant', icon: Bot },
   { href: '/directory', label: 'Clinics', icon: MapPin },
-  { href: '/emergency', label: 'Emergency', icon: Siren },
 ];
 
 export function BottomNav() {

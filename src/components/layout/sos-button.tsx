@@ -71,7 +71,7 @@ export function SosButton() {
       <Button
         variant="destructive"
         size="icon"
-        className="fixed bottom-20 right-4 sm:right-6 h-14 w-14 rounded-full shadow-2xl z-40 animate-pulse"
+        className="fixed bottom-20 left-1/2 -translate-x-1/2 h-14 w-14 rounded-full shadow-2xl z-40 animate-pulse"
         onClick={handleSosClick}
       >
         <Siren className="h-7 w-7" />

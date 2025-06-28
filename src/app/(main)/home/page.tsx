@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, Pill, BookOpen, Stethoscope, Siren, MapPin, Newspaper } from 'lucide-react';
+import { Bot, Pill, BookOpen, Stethoscope, MapPin, Newspaper } from 'lucide-react';
 import { Header } from '@/components/layout/header';
 
 const features = [
@@ -23,11 +23,6 @@ const features = [
     title: 'Health Education',
     href: '/health-education',
     icon: BookOpen,
-  },
-  {
-    title: 'Emergency Instructions',
-    href: '/emergency',
-    icon: Siren,
   },
   {
     title: 'Healthcare Directory',
@@ -54,11 +49,11 @@ export default function HomePage() {
           {features.map((feature) => (
             <Link href={feature.href} key={feature.title} className="block group">
               <Card className="h-full hover:bg-accent/50 transition-colors duration-200 hover:shadow-md active:scale-95">
-                <CardHeader className="flex flex-col items-center text-center p-4">
-                  <div className="bg-primary/10 p-3 rounded-full mb-3 group-hover:bg-primary/20 transition-colors">
-                      <feature.icon className="h-8 w-8 text-primary" />
+                <CardHeader className="flex flex-col items-center text-center p-3">
+                  <div className="bg-primary/10 p-3 rounded-full mb-2 group-hover:bg-primary/20 transition-colors">
+                      <feature.icon className="h-7 w-7 text-primary" />
                   </div>
-                  <CardTitle className="text-base font-semibold">{feature.title}</CardTitle>
+                  <CardTitle className="text-sm font-semibold">{feature.title}</CardTitle>
                 </CardHeader>
               </Card>
             </Link>
