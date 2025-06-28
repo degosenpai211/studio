@@ -4,6 +4,14 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, User, Map } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 type HeaderProps = {
   title: string;
@@ -31,10 +39,25 @@ export function Header({ title, showBackButton = false }: HeaderProps) {
       </h1>
       
       <div className="flex items-center justify-end gap-1">
-        <Button variant="ghost" size="icon" className="h-9 w-9">
-          <User className="h-5 w-5" />
-          <span className="sr-only">Profile</span>
-        </Button>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" size="icon" className="h-9 w-9">
+              <User className="h-5 w-5" />
+              <span className="sr-only">Profile</span>
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-56">
+            <DropdownMenuLabel>
+              <p className="font-medium">Jane Doe</p>
+              <p className="text-xs text-muted-foreground font-normal">jane.doe@example.com</p>
+            </DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Profile</DropdownMenuItem>
+            <DropdownMenuItem>Settings</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Log out</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
         <Button asChild variant="ghost" size="icon" className="h-9 w-9">
           <Link href="/map">
             <Map className="h-5 w-5" />

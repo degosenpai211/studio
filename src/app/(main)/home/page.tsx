@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, Pill, BookOpen, Stethoscope, Siren, MapPin } from 'lucide-react';
+import { Card, CardHeader, CardTitle } from '@/components/ui/card';
+import { Bot, Pill, BookOpen, Stethoscope, Siren, MapPin, Newspaper } from 'lucide-react';
 import { Header } from '@/components/layout/header';
 
 const features = [
@@ -34,12 +34,17 @@ const features = [
     href: '/directory',
     icon: MapPin,
   },
+  {
+    title: 'Health News',
+    href: '/health-news',
+    icon: Newspaper,
+  }
 ];
 
 export default function HomePage() {
   return (
     <div className="flex flex-col h-full">
-      <Header title="SalvusAI" />
+      <Header title="Home" />
       <main className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
         <div className="text-center">
           <h2 className="text-2xl font-bold font-headline">Welcome!</h2>

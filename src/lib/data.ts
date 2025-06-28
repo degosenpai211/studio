@@ -39,6 +39,38 @@ export const emergencyInstructions = [
       'Stay with the person until help arrives.',
     ],
   },
+  {
+    id: 'stroke',
+    title: 'Stroke (F.A.S.T.)',
+    steps: [
+      'Face: Ask the person to smile. Does one side of the face droop?',
+      'Arms: Ask the person to raise both arms. Does one arm drift downward?',
+      'Speech: Ask the person to repeat a simple phrase. Is their speech slurred or strange?',
+      'Time: If you observe any of these signs, call 911 immediately.',
+    ],
+  },
+  {
+    id: 'seizure',
+    title: 'Seizure',
+    steps: [
+      'Ease the person to the floor.',
+      'Turn the person gently onto one side to help breathing.',
+      'Clear the area around the person of anything hard or sharp.',
+      'Put something soft and flat, like a folded jacket, under his or her head.',
+      'Time the seizure. Call 911 if it lasts longer than 5 minutes.',
+    ],
+  },
+  {
+    id: 'allergic-reaction',
+    title: 'Severe Allergic Reaction (Anaphylaxis)',
+    steps: [
+      'Call 911 immediately.',
+      'Ask the person if they have an epinephrine auto-injector (EpiPen) and help them use it.',
+      'Try to keep the person calm.',
+      'Have the person lie on their back. If they are vomiting or bleeding, turn them on their side.',
+      'Loosen tight clothing and cover the person with a blanket.',
+    ],
+  },
 ];
 
 export const healthTopics = [
@@ -104,5 +136,32 @@ export const healthcareProviders = [
     phone: '555-0104',
     image: 'https://placehold.co/100x100.png',
     aiHint: 'dentist office'
+  },
+];
+
+export const healthNews = [
+  {
+    id: 'news-1',
+    title: 'ONS Study on Mental Wellbeing in Young Adults',
+    summary: 'A new study from the Office for National Statistics (ONS) highlights rising anxiety levels among young adults aged 18-25.',
+    date: '2023-10-26',
+    source: 'ONS',
+    href: '#',
+  },
+  {
+    id: 'news-2',
+    title: 'Impact of Remote Work on Physical Health',
+    summary: 'The ONS reports on the physical health implications of long-term remote work, suggesting an increase in musculoskeletal issues.',
+    date: '2023-10-24',
+    source: 'ONS',
+    href: '#',
+  },
+  {
+    id: 'news-3',
+    title: 'Seasonal Flu Vaccination Rates for 2023',
+    summary: 'An update on the seasonal flu vaccination program, with data showing strong uptake in vulnerable populations.',
+    date: '2023-10-22',
+    source: 'ONS',
+    href: '#',
   },
 ];
