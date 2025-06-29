@@ -11,7 +11,7 @@ import { Siren } from 'lucide-react';
 export default function EmergencyPage() {
   return (
     <div className="flex flex-col h-full">
-      <Header title="Emergency Instructions" showBackButton />
+      <Header title="Instrucciones de Emergencia" showBackButton />
       <main className="flex-1 overflow-y-auto p-4 sm:p-6">
         <Accordion type="single" collapsible className="w-full">
           {emergencyInstructions.map((item) => (

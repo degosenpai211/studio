@@ -24,14 +24,14 @@ export default function DirectoryPage() {
 
   return (
     <div className="flex flex-col h-full">
-      <Header title="Healthcare Directory" showBackButton />
+      <Header title="Directorio de Salud" showBackButton />
       <div className="p-4 sm:p-6 border-b">
         <div className="flex items-center gap-2">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
             <Input
               type="text"
-              placeholder="Search by name or specialty..."
+              placeholder="Buscar por nombre o especialidad..."
               className="pl-10"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -40,7 +40,7 @@ export default function DirectoryPage() {
           <Button asChild>
             <Link href="/map">
               <Map className="mr-2 h-4 w-4" />
-              View Map
+              Ver Mapa
             </Link>
           </Button>
         </div>
@@ -75,7 +75,7 @@ export default function DirectoryPage() {
           ))
         ) : (
           <div className="text-center py-10 text-muted-foreground">
-            <p>No providers found.</p>
+            <p>No se encontraron proveedores.</p>
           </div>
         )}
       </main>

@@ -15,7 +15,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 
 const formSchema = z.object({
-  symptoms: z.string().min(10, 'Please describe your symptoms in at least 10 characters.'),
+  symptoms: z.string().min(10, 'Por favor, describe tus síntomas con al menos 10 caracteres.'),
 });
 
 export default function MedicationSuggestionPage() {
@@ -36,7 +36,7 @@ export default function MedicationSuggestionPage() {
       const res = await suggestMedication({ symptoms: values.symptoms });
       setResult(res);
     } catch (e) {
-      setError('An error occurred while suggesting medication. Please try again.');
+      setError('Ocurrió un error al sugerir la medicación. Por favor, inténtalo de nuevo.');
       console.error(e);
     } finally {
       setIsLoading(false);
@@ -45,12 +45,12 @@ export default function MedicationSuggestionPage() {
 
   return (
     <div className="flex flex-col h-full">
-      <Header title="Medication Suggestion" showBackButton />
+      <Header title="Sugerencia de Medicamentos" showBackButton />
       <main className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle>Get Medication Suggestions</CardTitle>
-            <CardDescription>Describe your symptoms to get over-the-counter medication ideas.</CardDescription>
+            <CardTitle>Obtener Sugerencias de Medicamentos</CardTitle>
+            <CardDescription>Describe tus síntomas para obtener ideas de medicamentos de venta libre.</CardDescription>
           </CardHeader>
           <CardContent>
             <Form {...form}>
@@ -60,10 +60,10 @@ export default function MedicationSuggestionPage() {
                   name="symptoms"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Symptoms for Medication</FormLabel>
+                      <FormLabel>Síntomas para Medicación</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="e.g., Runny nose, sneezing, and itchy eyes."
+                          placeholder="Ej: Secreción nasal, estornudos y picazón en los ojos."
                           className="resize-none"
                           rows={4}
                           {...field}
@@ -75,7 +75,7 @@ export default function MedicationSuggestionPage() {
                 />
                 <Button type="submit" className="w-full" disabled={isLoading}>
                   {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                  Suggest Medication
+                  Sugerir Medicamento
                 </Button>
               </form>
             </Form>
@@ -96,7 +96,7 @@ export default function MedicationSuggestionPage() {
                  <div className="bg-primary/10 p-2 rounded-full">
                    <Pill className="h-6 w-6 text-primary" />
                  </div>
-                 <CardTitle>Suggested OTC Medications</CardTitle>
+                 <CardTitle>Medicamentos de Venta Libre Sugeridos</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
@@ -110,7 +110,7 @@ export default function MedicationSuggestionPage() {
             </Card>
             <Alert>
               <TriangleAlert className="h-4 w-4" />
-              <AlertTitle>Disclaimer</AlertTitle>
+              <AlertTitle>Aviso Legal</AlertTitle>
               <AlertDescription>{result.disclaimer}</AlertDescription>
             </Alert>
           </>

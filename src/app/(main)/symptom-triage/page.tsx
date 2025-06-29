@@ -15,7 +15,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Progress } from '@/components/ui/progress';
 
 const formSchema = z.object({
-  symptoms: z.string().min(10, 'Please describe your symptoms in at least 10 characters.'),
+  symptoms: z.string().min(10, 'Por favor, describe tus síntomas con al menos 10 caracteres.'),
 });
 
 export default function SymptomTriagePage() {
@@ -36,7 +36,7 @@ export default function SymptomTriagePage() {
       const res = await triageSymptoms({ symptoms: values.symptoms });
       setResult(res);
     } catch (e) {
-      setError('An error occurred while triaging symptoms. Please try again.');
+      setError('Ocurrió un error al analizar los síntomas. Por favor, inténtalo de nuevo.');
       console.error(e);
     } finally {
       setIsLoading(false);
@@ -45,12 +45,12 @@ export default function SymptomTriagePage() {
 
   return (
     <div className="flex flex-col h-full">
-      <Header title="Symptom Triage" showBackButton />
+      <Header title="Triaje de Síntomas" showBackButton />
       <main className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle>Describe Your Symptoms</CardTitle>
-             <CardDescription>Enter your symptoms below and our AI will provide a list of possible conditions.</CardDescription>
+            <CardTitle>Describe Tus Síntomas</CardTitle>
+             <CardDescription>Ingresa tus síntomas a continuación y nuestra IA te proporcionará una lista de posibles condiciones.</CardDescription>
           </CardHeader>
           <CardContent>
             <Form {...form}>
@@ -60,10 +60,10 @@ export default function SymptomTriagePage() {
                   name="symptoms"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Symptoms</FormLabel>
+                      <FormLabel>Síntomas</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="e.g., I have a high fever, a sore throat, and a headache."
+                          placeholder="Ej: Tengo fiebre alta, dolor de garganta y dolor de cabeza."
                           className="resize-none"
                           rows={4}
                           {...field}
@@ -75,7 +75,7 @@ export default function SymptomTriagePage() {
                 />
                 <Button type="submit" className="w-full" disabled={isLoading}>
                   {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                  Analyze Symptoms
+                  Analizar Síntomas
                 </Button>
               </form>
             </Form>
@@ -92,7 +92,7 @@ export default function SymptomTriagePage() {
         {result && (
           <Card>
             <CardHeader>
-              <CardTitle>Possible Conditions</CardTitle>
+              <CardTitle>Posibles Condiciones</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               {result.map((condition, index) => (

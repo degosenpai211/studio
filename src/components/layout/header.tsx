@@ -29,7 +29,7 @@ export function Header({ title, showBackButton = false }: HeaderProps) {
         {showBackButton && (
           <Button variant="ghost" size="icon" onClick={() => router.back()} className="h-9 w-9">
             <ArrowLeft className="h-5 w-5" />
-            <span className="sr-only">Back</span>
+            <span className="sr-only">Atrás</span>
           </Button>
         )}
       </div>
@@ -43,7 +43,7 @@ export function Header({ title, showBackButton = false }: HeaderProps) {
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="icon" className="h-9 w-9">
               <User className="h-5 w-5" />
-              <span className="sr-only">Profile</span>
+              <span className="sr-only">Perfil</span>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-56">
@@ -52,16 +52,16 @@ export function Header({ title, showBackButton = false }: HeaderProps) {
               <p className="text-xs text-muted-foreground font-normal">jane.doe@example.com</p>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
+            <DropdownMenuItem>Perfil</DropdownMenuItem>
+            <DropdownMenuItem>Configuración</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Log out</DropdownMenuItem>
+            <DropdownMenuItem>Cerrar Sesión</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
         <Button asChild variant="ghost" size="icon" className="h-9 w-9">
           <Link href="/map">
             <Map className="h-5 w-5" />
-            <span className="sr-only">Map</span>
+            <span className="sr-only">Mapa</span>
           </Link>
         </Button>
       </div>

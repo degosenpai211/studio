@@ -32,8 +32,8 @@ export function SosButton() {
     if (!navigator.geolocation) {
       toast({
         variant: 'destructive',
-        title: 'Geolocation Error',
-        description: 'Your browser does not support geolocation.',
+        title: 'Error de Geolocalización',
+        description: 'Tu navegador no soporta la geolocalización.',
       });
       setIsCalling(false);
       setIsConfirming(false);
@@ -45,8 +45,8 @@ export function SosButton() {
         // Simulate call
         setTimeout(() => {
           toast({
-            title: 'Emergency Alert Sent',
-            description: 'Services notified of your location. Redirecting to instructions...',
+            title: 'Alerta de Emergencia Enviada',
+            description: 'Servicios notificados de tu ubicación. Redirigiendo a instrucciones...',
           });
           setIsCalling(false);
           setIsConfirming(false);
@@ -56,8 +56,8 @@ export function SosButton() {
       (error) => {
         toast({
           variant: 'destructive',
-          title: 'Location Error',
-          description: 'Could not get your location. Please enable location services.',
+          title: 'Error de Ubicación',
+          description: 'No se pudo obtener tu ubicación. Por favor, activa los servicios de ubicación.',
         });
         console.error('Geolocation error:', error);
         setIsCalling(false);
@@ -75,33 +75,33 @@ export function SosButton() {
         onClick={handleSosClick}
       >
         <Siren className="h-7 w-7" />
-        <span className="sr-only">Emergency SOS</span>
+        <span className="sr-only">SOS Emergencia</span>
       </Button>
 
       <AlertDialog open={isConfirming} onOpenChange={setIsConfirming}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Emergency SOS</AlertDialogTitle>
+            <AlertDialogTitle>SOS Emergencia</AlertDialogTitle>
             <AlertDialogDescription>
               {isCalling
-                ? 'Contacting emergency services and getting your location...'
-                : 'Are you sure you need an ambulance? This will attempt to notify emergency services with your location.'}
+                ? 'Contactando a los servicios de emergencia y obteniendo tu ubicación...'
+                : '¿Estás seguro de que necesitas una ambulancia? Esto intentará notificar a los servicios de emergencia con tu ubicación.'}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             {isCalling ? (
               <Button disabled className="w-full">
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Contacting...
+                Contactando...
               </Button>
             ) : (
               <>
-                <AlertDialogCancel onClick={() => setIsConfirming(false)}>Cancel</AlertDialogCancel>
+                <AlertDialogCancel onClick={() => setIsConfirming(false)}>Cancelar</AlertDialogCancel>
                 <AlertDialogAction
                   className="bg-destructive hover:bg-destructive/90"
                   onClick={handleConfirmCall}
                 >
-                  Yes, I Need Help
+                  Sí, Necesito Ayuda
                 </AlertDialogAction>
               </>
             )}

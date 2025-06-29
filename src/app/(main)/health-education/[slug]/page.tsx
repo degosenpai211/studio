@@ -18,7 +18,7 @@ export default function HealthTopicPage({ params }: { params: { slug: string } }
 
   return (
     <div className="flex flex-col h-full">
-      <Header title="Health Article" showBackButton />
+      <Header title="Artículo de Salud" showBackButton />
       <main className="flex-1 overflow-y-auto p-4 sm:p-6">
         <Card>
           <CardHeader>

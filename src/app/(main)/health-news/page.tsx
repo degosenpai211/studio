@@ -6,12 +6,12 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 export default function HealthNewsPage() {
   return (
     <div className="flex flex-col h-full">
-      <Header title="Health News" showBackButton />
+      <Header title="Noticias de Salud" showBackButton />
       <main className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
         <Card>
           <CardHeader>
-            <CardTitle>Latest from ONS</CardTitle>
-            <CardDescription>Updates on health and well-being.</CardDescription>
+            <CardTitle>Lo último de ONS</CardTitle>
+            <CardDescription>Actualizaciones sobre salud y bienestar.</CardDescription>
           </CardHeader>
         </Card>
         <div className="space-y-4">

@@ -14,7 +14,7 @@ import { Loader2, Bot } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 const formSchema = z.object({
-  medicalQuestion: z.string().min(10, 'Please ask a question with at least 10 characters.'),
+  medicalQuestion: z.string().min(10, 'Por favor, haz una pregunta con al menos 10 caracteres.'),
 });
 
 export default function AiAssistantPage() {
@@ -35,7 +35,7 @@ export default function AiAssistantPage() {
       const res = await getPersonalizedInstructions({ medicalQuestion: values.medicalQuestion });
       setResult(res);
     } catch (e) {
-      setError('An error occurred while fetching instructions. Please try again.');
+      setError('Ocurrió un error al obtener las instrucciones. Por favor, inténtalo de nuevo.');
       console.error(e);
     } finally {
       setIsLoading(false);
@@ -44,12 +44,12 @@ export default function AiAssistantPage() {
 
   return (
     <div className="flex flex-col h-full">
-      <Header title="AI Medical Assistant" showBackButton />
+      <Header title="Asistente Médico IA" showBackButton />
       <main className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle>Ask a Medical Question</CardTitle>
-            <CardDescription>Get personalized medical instructions from our AI assistant.</CardDescription>
+            <CardTitle>Haz una Pregunta Médica</CardTitle>
+            <CardDescription>Obtén instrucciones médicas personalizadas de nuestro asistente de IA.</CardDescription>
           </CardHeader>
           <CardContent>
             <Form {...form}>
@@ -59,10 +59,10 @@ export default function AiAssistantPage() {
                   name="medicalQuestion"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Your Question</FormLabel>
+                      <FormLabel>Tu Pregunta</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="e.g., What are the best ways to manage seasonal allergies?"
+                          placeholder="Ej: ¿Cuáles son las mejores formas de manejar las alergias estacionales?"
                           className="resize-none"
                           rows={4}
                           {...field}
@@ -74,7 +74,7 @@ export default function AiAssistantPage() {
                 />
                 <Button type="submit" className="w-full" disabled={isLoading}>
                   {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                  Get Instructions
+                  Obtener Instrucciones
                 </Button>
               </form>
             </Form>
@@ -94,7 +94,7 @@ export default function AiAssistantPage() {
                <div className="bg-primary/10 p-2 rounded-full">
                  <Bot className="h-6 w-6 text-primary" />
                </div>
-               <CardTitle>Personalized Instructions</CardTitle>
+               <CardTitle>Instrucciones Personalizadas</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-foreground/90 whitespace-pre-wrap leading-relaxed">

@@ -5,32 +5,32 @@ import { Header } from '@/components/layout/header';
 
 const features = [
   {
-    title: 'AI Medical Assistant',
+    title: 'Asistente Médico IA',
     href: '/ai-assistant',
     icon: Bot,
   },
   {
-    title: 'Symptom Triage',
+    title: 'Triaje de Síntomas',
     href: '/symptom-triage',
     icon: Stethoscope,
   },
   {
-    title: 'Medication Suggestion',
+    title: 'Sugerencia de Medicamentos',
     href: '/medication-suggestion',
     icon: Pill,
   },
   {
-    title: 'Health Education',
+    title: 'Educación sobre Salud',
     href: '/health-education',
     icon: BookOpen,
   },
   {
-    title: 'Healthcare Directory',
+    title: 'Directorio de Salud',
     href: '/directory',
     icon: MapPin,
   },
   {
-    title: 'Health News',
+    title: 'Noticias de Salud',
     href: '/health-news',
     icon: Newspaper,
   }
@@ -39,21 +39,21 @@ const features = [
 export default function HomePage() {
   return (
     <div className="flex flex-col h-full">
-      <Header title="Home" />
+      <Header title="Inicio" />
       <main className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
         <div className="text-center">
-          <h2 className="text-2xl font-bold font-headline">Welcome!</h2>
-          <p className="text-muted-foreground">How can we help you today?</p>
+          <h2 className="text-2xl font-bold font-headline">¡Bienvenido a AmyAI!</h2>
+          <p className="text-muted-foreground">¿Cómo podemos ayudarte hoy?</p>
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3">
           {features.map((feature) => (
             <Link href={feature.href} key={feature.title} className="block group">
               <Card className="h-full hover:bg-accent/50 transition-colors duration-200 hover:shadow-md active:scale-95">
                 <CardHeader className="flex flex-col items-center text-center p-3">
                   <div className="bg-primary/10 p-3 rounded-full mb-2 group-hover:bg-primary/20 transition-colors">
-                      <feature.icon className="h-7 w-7 text-primary" />
+                      <feature.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-sm font-semibold">{feature.title}</CardTitle>
+                  <CardTitle className="text-xs font-semibold">{feature.title}</CardTitle>
                 </CardHeader>
               </Card>
             </Link>

@@ -6,10 +6,10 @@ import { Home, Stethoscope, Bot, MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { href: '/home', label: 'Home', icon: Home },
-  { href: '/symptom-triage', label: 'Triage', icon: Stethoscope },
-  { href: '/ai-assistant', label: 'Assistant', icon: Bot },
-  { href: '/directory', label: 'Clinics', icon: MapPin },
+  { href: '/home', label: 'Inicio', icon: Home },
+  { href: '/symptom-triage', label: 'Triaje', icon: Stethoscope },
+  { href: '/ai-assistant', label: 'Asistente', icon: Bot },
+  { href: '/directory', label: 'Clínicas', icon: MapPin },
 ];
 
 export function BottomNav() {
