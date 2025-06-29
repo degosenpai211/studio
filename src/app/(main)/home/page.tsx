@@ -53,7 +53,8 @@ export default function HomePage() {
     <div className="flex flex-col h-full">
       <Header title="Inicio" />
       <main className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
-        <div className="text-center">
+        <div class
+        Name="text-center">
           <h2 className="text-2xl font-bold font-headline">¡Bienvenido a AmyAI!</h2>
           <p className="text-muted-foreground">¿Cómo podemos ayudarte hoy?</p>
         </div>
